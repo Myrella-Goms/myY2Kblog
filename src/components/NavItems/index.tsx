@@ -16,9 +16,9 @@ const navItemsProps: readonly INavItems[] = [
 
 export function NavItems() {
   return (
-    <div className="flex gap-4 items-center">
+    <div className="flex gap-4 items-center text-muted-foreground">
       {navItemsProps.map((value, index) => 
-        <a key={index} href={value.href}>{value.label}</a>
+        <a className="text-4xl py-2 px-2 border border-transparent hover:text-primary hover:border-primary" key={index} href={value.href}>[{value.label}]</a>
       )}
     </div>
   );
