@@ -8,6 +8,9 @@
 @theme {
   --font-body: var(--font-body), ui-monospace, monospace;
   --font-title: var(--font-vt323), ui-monospace, monospace;
+  
+  --text-mobile-title: var(--mobile-font-title);
+  --text-mobile-body: var(--mobile-font-body);
 
   --color-primary: var(--primary);
   --color-input: var(--input);
@@ -49,7 +52,7 @@
   --popover-foreground: oklch(0.93 0.01 120);
 
   /* acid lime */
-  --primary: oklch(0.86 0.23 128);
+  --primary: oklch(52.669% 0.27809 302.051);
   --primary-foreground: oklch(0.16 0.02 260);
 
   --secondary: oklch(0.26 0.012 260);
@@ -59,7 +62,7 @@
   --muted-foreground: oklch(0.68 0.02 260);
 
   /* hot magenta */
-  --accent: oklch(0.66 0.25 350);
+  --accent: oklch(91.896% 0.18525 105.193);
   --accent-foreground: oklch(0.97 0.01 350);
 
   --destructive: oklch(0.62 0.24 20);
@@ -68,6 +71,10 @@
   --input: oklch(0.3 0.02 260);
 
   --radius: 0.15rem;
+
+  --mobile-width: 41.5rem;
+  --mobile-font-title: 3rem; 
+  --mobile-font-body: 1.5rem;
 }
 
 @layer base {
@@ -111,6 +118,10 @@
     mix-blend-mode: multiply;
   }
 
+  .btn-carousel svg{
+    width: 2rem;
+    height: 2rem;
+  }
   /* chunky offset border box */
   .box-shadow-hard {
     box-shadow: 4px 4px 0 0 var(--foreground);
