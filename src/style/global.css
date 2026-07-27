@@ -118,9 +118,10 @@
     mix-blend-mode: multiply;
   }
 
-  .btn-carousel svg{
+  .btn-component svg{
     width: 2rem;
     height: 2rem;
+    cursor: pointer;
   }
   /* chunky offset border box */
   .box-shadow-hard {
@@ -175,9 +176,6 @@
     }
   }
 
-  .noise {
-    position: relative;
-  }
   .noise::after {
     content: "";
     position: absolute;
