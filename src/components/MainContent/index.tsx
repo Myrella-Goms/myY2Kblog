@@ -4,8 +4,8 @@ type MainChildren = {
 
 export function MainContent({children}: MainChildren){
     return(
-        <main>
+        <div>
             {children}
-        </main>
+        </div>
     )
 }

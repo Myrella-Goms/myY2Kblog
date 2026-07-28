@@ -25,7 +25,7 @@ export function Carousel() {
   };
 
   return (
-    <div className="relative max-w-md h-105 box-shadow-hard-accent">
+    <div className="noise border h-105 box-shadow-hard-accent">
       <div className="absolute inset-y-0 left-0 right-0 flex justify-between">
         <Button onClick={handleLeftButtonClick}>
           <ChevronLeft />
@@ -37,7 +37,7 @@ export function Carousel() {
       <span className="absolute z-10 top-8 left-2 text-primary border font-black px-2">
         REC ●
       </span>
-      <img 
+      <img
         className="h-full w-full"
         src={images[currentIndex]}
         alt=""
