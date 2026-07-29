@@ -2,7 +2,7 @@ import { Carousel } from "../../Carousel";
 
 export function Home() {
   return (
-    <main className="flex justify-around mt-10">
+    <main className="mt-15 flex justify-center gap-22">
       <div className="flex flex-col flex-1 max-w-md">
         <p className="border border-primary text-accent px-2 py-2 self-start">
           ★ born in 2002 · updated whenever ★

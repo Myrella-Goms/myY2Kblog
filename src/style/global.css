@@ -8,7 +8,7 @@
 @theme {
   --font-body: var(--font-body), ui-monospace, monospace;
   --font-title: var(--font-vt323), ui-monospace, monospace;
-  
+
   --text-mobile-title: var(--mobile-font-title);
   --text-mobile-body: var(--mobile-font-body);
 
@@ -73,7 +73,7 @@
   --radius: 0.15rem;
 
   --mobile-width: 41.5rem;
-  --mobile-font-title: 3rem; 
+  --mobile-font-title: 3rem;
   --mobile-font-body: 1.5rem;
 }
 
@@ -89,14 +89,20 @@
     );
     background-size: 3px 3px;
   }
-  h2{
+  h2 {
     @apply font-title text-5xl;
   }
-  h3{
+  h3 {
     @apply font-title text-4xl;
   }
-  a{
+  a {
     @apply font-title;
+  }
+  select{
+    cursor: pointer;
+  }
+  select > option{
+    cursor: pointer;
   }
 }
 
@@ -118,9 +124,7 @@
     mix-blend-mode: multiply;
   }
 
-  .btn-component svg{
-    width: 2rem;
-    height: 2rem;
+  .btn-component {
     cursor: pointer;
   }
   /* chunky offset border box */
@@ -141,9 +145,12 @@
   }
 
   .blink {
-    animation: blink 1.1s steps(2, start) infinite;
+    animation: blink 2s steps(2, start) infinite;
   }
   @keyframes blink {
+    from {
+      visibility: visible;
+    }
     to {
       visibility: hidden;
     }
@@ -151,25 +158,13 @@
 
   .myAnimation-bar {
     animation-name: myAnimation;
+    display: inline-block;
     animation-duration: 22s;
     white-space: nowrap;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
   @keyframes myAnimation {
-    from{
-      transform: translateX(0);
-    }to {
-      transform: translateX(-50%);
-    }
-  }
-
-  .marquee-track {
-    display: inline-block;
-    white-space: nowrap;
-    animation: marquee 22s linear infinite;
-  }
-  @keyframes marquee {
     from {
       transform: translateX(0);
     }
@@ -191,7 +186,7 @@
     }
   }
 
-  .noise{
+  .noise {
     position: relative;
   }
   .noise::after {
@@ -199,11 +194,12 @@
     position: absolute;
     inset: 0;
     opacity: 0.4;
+    pointer-events: none;
     background-image: repeating-linear-gradient(
-        var(--secondary-foreground) 0px,
-        var(--muted-foreground) 2px,
-        transparent 10px,
-        transparent 20px
+      var(--secondary-foreground) 0px,
+      var(--muted-foreground) 2px,
+      transparent 10px,
+      transparent 20px
     );
     mix-blend-mode: overlay;
   }
