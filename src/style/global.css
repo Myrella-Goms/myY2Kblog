@@ -203,4 +203,18 @@
     );
     mix-blend-mode: overlay;
   }
+
+  .square{
+    @apply text-accent text-3xl;
+    position: relative;
+    animation: square 2s steps(2, end) infinite; 
+  }
+  @keyframes square{
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
 }

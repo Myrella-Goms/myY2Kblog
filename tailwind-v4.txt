@@ -1,0 +1,93 @@
+tailwind v4
+
+quando importamos o tailwind, ele define essas camadas:
+
+@layer theme, base, components, utilities;
+
+@import "./theme.css" layer(theme);
+@import "./preflight.css" layer(base);
+@import "./utilities.css" layer(utilities);
+
+a camada de theme serve para definir os tokens que serão usados no nosso projeto, nas classes utilitárias (a depender do nome do token, ele pode ser usado por baixo dos panos pelo tailwind, no preflight)
+
+a camada base aplica regras globais no projeto, essa camada usa o preflight que já possui regras definidas para padronizar comprotamos entre navegadores diferentes. 
+
+    *preflight é um conjunto de estilos base projetados para suavizar inconsitências entre diferentes navegadores, como se fosse um reset.css/normalize.css.
+
+-------------------------------------------------------------------------
+css text shadow cria sombras para o texto, podemos criar sombrar no eixo x e y, positivo e negativo
+
+h1{
+    text-shadow: horizontal - vertical - profundidade
+    text-shadow: -2px 0 0
+}
+
+size: classe utilitaria que calcula altura e largura
+
+inset-y-0: deixa o elemento centralizado: fica top, right, left e bottom 0
+
+CONTAINER FLEX(align-items: PAI, align-self: filho | CROSS AXIS, justify-content: main axis)
+
+*items- (refere-se ao align-items do cross axis, por padrão é stretch, mas posso padrozinar o container flex para center, start e etc..)
+
+*self-(refere-se ao align-self, que alinha o próprio filho)
+
+flex-1 : faz com que os filhos do container flex ocupem a mesma largura (50%)
+
+ANIMAÇÕES COM CSS:  
+
+mudanças de regras de um elemento ao longo do tempo.
+
+entendo que criamos uma classe de estilização com as propriedades de animação que eu quero e no keyframe estabelecemos as regras
+
+precisamos fazer um bind entre o nome da animação com o keyframe (identificador de uma aplicação que deve ser referenciado)
+
+- algumas propriedades: 
+animation-name: mesmo nome do keyframe para referenciar
+
+animation-duration: tempo que a transformação entre o estado inicial e o que eu quero deve ocorrer
+
+animation-timing-function: define a curva de velocidade que a animação deve ocorrer; ex: linear, ease-in;
+
+animation-interation-count: quantas vezes essa animação deve ser aplicada ao elemento
+
+animation-fill-mode: qual estado manter no elemento após executar a animação. ex: forwards, backwards
+
+animation-delay: a partit de quanto tempo a animação deve ser executada
+
+3 estados de uma animação, posso colocar mais estados, posso colocar de to from com transform
+@keyframe{
+    0%{
+        background-color: #292r84;
+    }
+    50%{
+        background-color: #ffffff;
+    }
+    100%{
+        background-color: #381919
+    }
+}
+
+//js/tx
+const index = songs.findIndex(song => song.value === newValue)
+
+//findIndex é uma função que retorna o indice de um array a partir da função de teste(predicate) que compara se o valor escolhido pelo usuario existe no array, se existir, predicate devolve um boolean e imediatamente o findIndex devolve o index
+
+ex:
+songs = [ {value: 'A'}, {value: 'B'}, {value: 'C'} ]
+newValue = 'B'
+Iteração 0: song = {value:'A'} → 'A' === 'B' → false
+Iteração 1: song = {value:'B'} → 'B' === 'B' → true → findIndex retorna 1
+
+//elementos option tem suporte de estilo muito limitado e inconsistente entre navegadores, se eu quiser a aparencia controlada, deveria usar um componente custom (listbox) em vez do select nativo. ex: biblioteca npm install @headlessui/react, Listbox (componente)
+
+//carrossel com component select filho:
+passamos o valor do select, a função de atualização e o array para as options via props
+
+renderização condicional = caso tenha opções, exiba o song.value, song.label
+
+O <select> é controlado pelo prop value que você passa (songs[currentIndex].value).
+
+Quando currentIndex muda (por clique nos botões ou por setCurrentIndex), o componente pai re-renderiza e passa um novo value para o Select. O navegador então marca a <option> cujo value casa com esse value e mostra o texto (option.label) dessa opção automaticamente — você não precisa "informar" o label ao select, o browser usa a <option> correspondente.
+
+ao selecionar uma option, o evento de change captura o valor do target, dispara e envia o valor que o usuario escolheu 
